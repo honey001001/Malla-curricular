@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #e8f6fa; /* celeste pastel muy claro */
+  color: #2d2d2d;
+  text-align: center;
+}
+
+header {
+  background-color: #a9d6e5; /* azul pastel */
+  padding: 20px;
+  color: #033649;
+}
+
+main {
+  padding: 40px 20px;
+}
+
+section {
+  background-color: #d4f1f4; /* celeste suave */
+  border: 2px dashed #89c2d9;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 600px;
+  margin: auto;
+}
+
+button {
+  background-color: #89c2d9;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #61a5c2;
+}
+
+#mensaje {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #03506f;
+}
+
+.oculto {
+  display: none;
+}
+
+footer {
+  background-color: #cce3f4;
+  padding: 15px;
+  margin-top: 50px;
+  color: #03415e;
+}
