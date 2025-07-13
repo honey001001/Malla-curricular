@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Página Interactiva</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(#f9f9f9, #dfe9f3);
+    }
+    header {
+      background-color: #4CAF50;
+      padding: 20px;
+      color: white;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    #mensaje {
+      margin-top: 30px;
+      font-size: 20px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bienvenid@ a mi página web ✨</h1>
+  </header>
 
+  <p>Hola, soy Paula. Estudio Enfermería y esta es mi página creada con GitHub Pages sin usar CodePen ni instalar nada 😎</p>
+
+  <button onclick="mostrarMensaje()">Haz clic aquí</button>
+  <div id="mensaje"></div>
+
+  <script>
+    function mostrarMensaje() {
+      const mensaje = document.getElementById('mensaje');
+      mensaje.innerText = "¡Gracias por visitar! 🧠💉";
+    }
+  </script>
+</body>
+</html>
