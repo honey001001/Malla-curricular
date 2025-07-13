@@ -3,27 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mi página de Enfermería</title>
+  <title>Malla Curricular Interactiva</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
   <header>
-    <h1>Hola, soy Paula</h1>
-    <p>Estudiante de Enfermería 🩺</p>
+    <h1>Malla Curricular Enfermería UFT</h1>
+    <p>Haz clic en un ramo para marcarlo como aprobado y desbloquear el siguiente semestre</p>
   </header>
 
   <main>
-    <section>
-      <p>Esta es mi página hecha con HTML, CSS y JS. Sin CodePen ni programas externos 😎</p>
-      <button onclick="desbloquearMensaje()">Haz clic para desbloquear el mensaje</button>
-      <div id="mensaje" class="oculto">✨ ¡Sigue brillando, futura enfermera de la UFT! ✨</div>
-    </section>
-  </main>
+    <div class="malla">
+      <div class="semestre" id="sem1">
+        <h2>Semestre 1</h2>
+        <ul>
+          <li onclick="marcarAprobado(this)">Anatomía</li>
+          <li onclick="marcarAprobado(this)">Biología Celular</li>
+          <li onclick="marcarAprobado(this)">Introducción a las Ciencias Básicas</li>
+          <li onclick="marcarAprobado(this)">Antropología</li>
+        </ul>
+      </div>
 
-  <footer>
-    <p>Creado por Paula Valenzuela • Universidad Finis Terrae</p>
-  </footer>
+      <div class="semestre bloqueado" id="sem2">
+        <h2>Semestre 2</h2>
+        <ul>
+          <li onclick="marcarAprobado(this)">Fisiología</li>
+          <li onclick="marcarAprobado(this)">Bioquímica</li>
+          <li onclick="marcarAprobado(this)">Introducción al Pensamiento Filosófico</li>
+        </ul>
+      </div>
+
+      <div class="semestre bloqueado" id="sem3">
+        <h2>Semestre 3</h2>
+        <ul>
+          <li onclick="marcarAprobado(this)">Microbiología</li>
+          <li onclick="marcarAprobado(this)">Psicología del Desarrollo</li>
+        </ul>
+      </div>
+
+      <div class="semestre bloqueado" id="sem4">
+        <h2>Semestre 4</h2>
+        <ul>
+          <li onclick="marcarAprobado(this)">Salud y Sociedad Contemporánea</li>
+          <li onclick="marcarAprobado(this)">Cuidados de Enfermería I</li>
+        </ul>
+      </div>
+    </div>
+  </main>
 
   <script src="scripts.js"></script>
 </body>
