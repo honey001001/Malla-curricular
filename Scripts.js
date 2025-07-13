@@ -1,23 +1,21 @@
 function marcar(ramo) {
-  if (ramo.classList.contains("aprobado")) return;
-
-  ramo.classList.add("aprobado");
+  // Permite marcar múltiples ramos sin bloquear interacción
+  ramo.classList.toggle("aprobado");
 
   const semestre = ramo.closest(".semestre");
-  const totalRamos = semestre.querySelectorAll("li").length;
-  const ramosAprobados = semestre.querySelectorAll("li.aprobado").length;
+  const total = semestre.querySelectorAll("li").length;
+  const aprobados = semestre.querySelectorAll("li.aprobado").length;
 
-  // Si después de marcar este, todos están aprobados
-  if (ramosAprobados === totalRamos) {
-    const siguiente = obtenerSiguienteSemestre(semestre.id);
-    if (siguiente) {
+  if (aprobados === total) {
+    const siguiente = obtenerSiguiente(semestre.id);
+    if (siguiente && siguiente.classList.contains("bloqueado")) {
       siguiente.classList.remove("bloqueado");
     }
   }
 }
 
-function obtenerSiguienteSemestre(idActual) {
-  const idNum = parseInt(idActual.replace("sem", ""));
-  const siguienteId = `sem${idNum + 1}`;
-  return document.getElementById(siguienteId);
+function obtenerSiguiente(idActual) {
+  const numero = parseInt(idActual.replace("sem", ""));
+  const siguiente = document.getElementById(`sem${numero + 1}`);
+  return siguiente;
 }
