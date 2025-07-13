@@ -1,50 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mi Página Interactiva</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(#f9f9f9, #dfe9f3);
-    }
-    header {
-      background-color: #4CAF50;
-      padding: 20px;
-      color: white;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 18px;
-      margin-top: 20px;
-      cursor: pointer;
-    }
-    #mensaje {
-      margin-top: 30px;
-      font-size: 20px;
-      color: #333;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi página de Enfermería</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+
   <header>
-    <h1>Bienvenid@ a mi página web ✨</h1>
+    <h1>Hola, soy Paula</h1>
+    <p>Estudiante de Enfermería 🩺</p>
   </header>
 
-  <p>Hola, soy Paula. Estudio Enfermería y esta es mi página creada con GitHub Pages sin usar CodePen ni instalar nada 😎</p>
+  <main>
+    <section>
+      <p>Esta es mi página hecha con HTML, CSS y JS. Sin CodePen ni programas externos 😎</p>
+      <button onclick="desbloquearMensaje()">Haz clic para desbloquear el mensaje</button>
+      <div id="mensaje" class="oculto">✨ ¡Sigue brillando, futura enfermera de la UFT! ✨</div>
+    </section>
+  </main>
 
-  <button onclick="mostrarMensaje()">Haz clic aquí</button>
-  <div id="mensaje"></div>
+  <footer>
+    <p>Creado por Paula Valenzuela • Universidad Finis Terrae</p>
+  </footer>
 
-  <script>
-    function mostrarMensaje() {
-      const mensaje = document.getElementById('mensaje');
-      mensaje.innerText = "¡Gracias por visitar! 🧠💉";
-    }
-  </script>
+  <script src="scripts.js"></script>
 </body>
 </html>
