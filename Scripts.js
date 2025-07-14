@@ -8,11 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ramo.addEventListener("click", () => {
         ramo.classList.toggle("aprobado");
 
-        // Verifica si todos los ramos del semestre están marcados
         const total = ramos.length;
-        const marcados = semestre.querySelectorAll("li.aprobado").length;
+        const aprobados = semestre.querySelectorAll("li.aprobado").length;
 
-        if (marcados === total) {
+        if (aprobados === total) {
           const siguiente = document.getElementById(`sem${index + 2}`);
           if (siguiente && siguiente.classList.contains("bloqueado")) {
             siguiente.classList.remove("bloqueado");
