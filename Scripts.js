@@ -1,22 +1,24 @@
-function marcar(ramo) {
-  // Marca o desmarca un ramo (tacha o quita el tachado)
-  ramo.classList.toggle("aprobado");
+document.addEventListener("DOMContentLoaded", () => {
+  const semestres = document.querySelectorAll(".semestre");
 
-  const semestre = ramo.closest(".semestre");
-  const total = semestre.querySelectorAll("li").length;
-  const aprobados = semestre.querySelectorAll("li.aprobado").length;
+  semestres.forEach((semestre, index) => {
+    const ramos = semestre.querySelectorAll("li");
 
-  // Si todos los ramos del semestre están marcados, desbloquea el siguiente
-  if (aprobados === total) {
-    const siguiente = obtenerSiguienteSemestre(semestre.id);
-    if (siguiente && siguiente.classList.contains("bloqueado")) {
-      siguiente.classList.remove("bloqueado");
-    }
-  }
-}
+    ramos.forEach(ramo => {
+      ramo.addEventListener("click", () => {
+        ramo.classList.toggle("aprobado");
 
-function obtenerSiguienteSemestre(idActual) {
-  const numero = parseInt(idActual.replace("sem", ""));
-  const siguiente = document.getElementById(`sem${numero + 1}`);
-  return siguiente;
-}
+        // Verifica si todos los ramos del semestre están marcados
+        const total = ramos.length;
+        const marcados = semestre.querySelectorAll("li.aprobado").length;
+
+        if (marcados === total) {
+          const siguiente = document.getElementById(`sem${index + 2}`);
+          if (siguiente && siguiente.classList.contains("bloqueado")) {
+            siguiente.classList.remove("bloqueado");
+          }
+        }
+      });
+    });
+  });
+});
